@@ -21,7 +21,67 @@
 
 ## Sequential CPU
 
+### Y86-64 Instruction Set Architecture
+
+#### Calling Conventions
+
+- Stack pointer: 	%rsp
+- Arguments: %rdi, %rsi, %rdx, %rcx, %r8, %r9
+- Results: %rax
+- Caller-save: %rax, %r10, %r11 + argument registers
+- Callee-save: %rbx, %rbp, %r12, %r13, %r14, %r15
+
+Assembly code snippet:
+
+```assembly
+xorq %rdx, %rdx        # %rdx = 0
+mrmovq a(%rdx), %rax   # %rax = a
+mrmovq b(%rdx), %rbx   # %rbx = b
+```
+
 ## Pipeline CPU
+
+### Data Flow Through Processor Stages
+
+| Fetch  | Decode | Execute | Memory | Write back |
+| ------ | ------ | ------- | ------ | ---------- |
+| f.prPC | d.iCd  | e.iCd   | m.iCd  | w.iCd      |
+|        | d.iFn  | e.iFn   | m.dstE | w.dstE     |
+|        | d.rA   | e.valC  | m.dstM | w.dstM     |
+|        | d.rB   | e.srcA  | m.valA | w.valE     |
+|        | d.valC | e.srcB  | m.valE | w.valM     |
+|        | d.valP | e.dstE  | m.bch  |            |
+|        |        | e.dstM  |        |            |
+|        |        | e.valA  |        |            |
+|        |        | e.valB  |        |            |
+
+### Instruction-Level Parallelism
+
+Multiple in-flight (executing in the pipeline) instructions run partly at the same time, may even run out-of-order. However, the program must have the same output as if instructions were executed sequentially.
+
+### Dependencies
+
+#### Data Dependencies
+
+- Casual: B reads a value written by A
+- Output: B writes to a location written by A
+- Anti/Alias: B writes to a location read by A
+
+#### Control Dependencies
+
+
+
+Number of bubbles:
+
+Return: 3
+
+Jump: 2
+
+Relations:
+
+Throughput = clock rate / CPI
+
+Execution time = CPI * # of instructions / clock rate
 
 ## Memory Hierarchy
 
