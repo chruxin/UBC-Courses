@@ -17,8 +17,6 @@
     + [Impact of Cache Parameters](#impact-of-cache-parameters)
   * [File Size Table](#file-size-table)
 
-<small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
-
 ## Sequential CPU
 
 ### Y86-64 Instruction Set Architecture
