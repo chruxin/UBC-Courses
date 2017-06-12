@@ -91,7 +91,7 @@ Talking to the I/O devices:
 
    - Only kernel can access that memory
 
-##Virtual Memory
+## Virtual Memory
 
 ### Address Space
 
@@ -229,7 +229,7 @@ Detailed process when using a flat page table:
 | M=2^m  | Number of addresses in physical address space |
 | P=2^p  | Page size (bytes)                        |
 
-### Components of a virtual address (VA):
+### Components of a virtual address (VA)
 
 | Symbol | Description                              |
 | ------ | ---------------------------------------- |
@@ -238,7 +238,7 @@ Detailed process when using a flat page table:
 | TLBI   | TLB (translation lookaside buffer) index |
 | TLBT   | TLB tag                                  |
 
-### Components of a physical address (PA):
+### Components of a physical address (PA)
 
 | Symbol | Description                  |
 | ------ | ---------------------------- |
@@ -248,7 +248,7 @@ Detailed process when using a flat page table:
 | CI     | Cache index                  |
 | CT     | Cache tag                    |
 
-### Others:
+### Others
 
 | Symbol | Description              |
 | ------ | ------------------------ |
