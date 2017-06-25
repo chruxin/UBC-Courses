@@ -4,6 +4,12 @@
 
 ### Rotating Hard Disks
 
+**Blocks vs. sectors**
+
+Sector is the smallest amount of data that the hardware will allow to be transferred to/from the disk.
+
+ A block is the unit of size that a file system works with and it is some number of consecutive sectors. 
+
 #### Average time to read data
 
 *Average time = average seek time + average rotational latency + transfer time*
