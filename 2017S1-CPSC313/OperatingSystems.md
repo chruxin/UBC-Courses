@@ -201,7 +201,7 @@ Structure:
 - TLB entry has the same data as page table entry
 - If the TLB has T=2^t sets, then the TLBI (TLB index) consists of the t least significant bits of the VPN, and the TLBT (TLB tag) consists of the remaining bits in the VPN.
 
-| TLBT | TLB  | VPO  |
+| TLBT | TLBI | VPO  |
 | ---- | ---- | ---- |
 | VPN  | VPN  | VPO  |
 
