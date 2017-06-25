@@ -15,6 +15,7 @@
       - [Write Hit](#write-hit)
       - [Write Miss](#write-miss)
     + [Impact of Cache Parameters](#impact-of-cache-parameters)
+  * [Memory Mountain](#memory-mountain)
   * [File Size Table](#file-size-table)
 
 ## Sequential CPU
@@ -196,6 +197,19 @@ Note: write-through is used with no-write-allocate, write-back is used with writ
 - Block size: larger block sizes increase spatial locality (hit rates) but decrease temporal locality (fewer lines fit in the cache).
 - Associativity (choice of *E*): higher associativity decreases the # of misses, but it's also slower.
 - Write strategy: In general, caches further down the hierarchy are more likely to use write-back than write-through.
+
+## Memory Mountain
+
+Information that *can* be discovered by a memory mountain:
+
+- block size: where the slopes of spatial locality “flatten out”.
+- cache size: the ridges of temporal locality
+
+Information that *cannot* be discovered by a memory mountain:
+
+- replacement policy
+- associativity
+- behaviours for `write` operations: write-through vs write-back, write-allocate vs no-write-allocate
 
 ## File Size Table
 
