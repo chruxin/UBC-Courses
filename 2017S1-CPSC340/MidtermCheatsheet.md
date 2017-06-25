@@ -12,13 +12,13 @@ Mode: most often category
 
 Quantiles: category occurring > *t* times
 
- - Mean and std are sensitive to extreme values/outliers
+- Mean and std are sensitive to extreme values/outliers
 
 # Supervised Learning
-with discrete labels, SL -> classification
+with discrete labels, SL —> classification
 
- - Take features of objects & corresponding labels as inputs
- - Output a program that can predict the labels of a new object
+- Take features of objects & corresponding labels as inputs
+- Output a program that can predict the labels of a new object
 
 ## Decision Trees
 Decision Stump: accuracy score
@@ -51,31 +51,31 @@ All objects: same distribution, sampled independently
 ## Validation
 use part of your dataset to approximate test error: split training objects into training set and validation set
  -> validation error gives an unbiased approximation of test error
- 
+
 ## Optimization Error
 when not many models to chose, optimization error is small when lots of models big
- 
+
 ## Cross Validation
 k-fold cross-validation {1,2,3,...,k} average errors
- 
+
 ## Parametric vs. Non-parametric
 Parametric models:
- 
+
 - Fixed number of parameters
 - Estimate more accurately with more data
 
 Non-parametric models:
 
- - Number of params grows with 'n'
- - Model gets more complicated with more data
+- Number of params grows with 'n'
+- Model gets more complicated with more data
 
 ## KNN (K Nearest Neighbours)
 ### Supervised learning
 Non-parametric
 
 Assumption: objects with similar feature likely have similar labels.
- - No training phase, expensive prediction
- - Problematic if features have different scales
+- No training phase, expensive prediction
+- Problematic if features have different scales
 
 # Ensemble Methods
 Classifiers that have classifiers as input
@@ -83,10 +83,10 @@ Classifiers that have classifiers as input
 ## Boosting (AdaBoost)
 Take simple classifier that underfits, improve training error
 
- - Fit a classifier on the training data -> give a higher weight to examples that the classifier got wrong -> Fit a classifier on the weighted data -> Tecurse
+- Fit a classifier on the training data -> give a higher weight to examples that the classifier got wrong -> Fit a classifier on the weighted data -> Tecurse
 
 Prediction: weighted vote of individual classifier prediction
- 
+
 ## Averaging
 Take complex classifiers that overfit, improve test error
 
@@ -101,16 +101,16 @@ Average a set of deep decision trees
 
 Fast prediction
 
- - Generate several bootstrap examples (63% of original objects)
- - Fit a classifier to each bootstrap sample
- - At test time, average predictions
+- Generate several bootstrap examples (63% of original objects)
+- Fit a classifier to each bootstrap sample
+- At test time, average predictions
 
 Random Trees
 
 When tilting each decision stump to construct deep decision tree:
 
- - Do not consider all features
- - Each split only consider a small number of randomly-chosen features
+- Do not consider all features
+- Each split only consider a small number of randomly-chosen features
 
 # Unsupervised Learning
 Usually no best method
@@ -298,7 +298,7 @@ $max(z_i) = log(\sum{exp(z_i)})$
 Intuition: largest element is magnified exponentially while smaller elements become negligible
 
 
-|      |Decision Stump|KNN|K-Means|DBSCAN|Decision Tree|
-|------|--------------|---|-------|------|-------------|
-|Cost:|O(ndlongn)|size of model: O(nd) cost of prediction: O(nd) for 1 test object|O(ndk), update means: O(nd)|dompute distances O(n^2d)|O(mndlogn), m: depth of tree|
-|sensitive to scales|No|Yes|Yes|Yes|
+|                     | Decision Stump | KNN                                      | K-Means                     | DBSCAN                    | Decision Tree                |
+| ------------------- | -------------- | ---------------------------------------- | --------------------------- | ------------------------- | ---------------------------- |
+| Cost:               | O(ndlongn)     | size of model: O(nd) cost of prediction: O(nd) for 1 test object | O(ndk), update means: O(nd) | dompute distances O(n^2d) | O(mndlogn), m: depth of tree |
+| sensitive to scales | No             | Yes                                      | Yes                         | Yes                       |                              |
