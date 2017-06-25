@@ -1,32 +1,32 @@
 # Operating Systems
 
 - [Operating Systems](#operating-systems)
-	- [Processor/Control of Flow](#processorcontrol-of-flow)
-	- [Exceptions](#exceptions)
-		- [Types of Exceptions](#types-of-exceptions)
-		- [Interrupts](#interrupts)
-		- [Traps and System Calls](#traps-and-system-calls)
-		- [Faults](#faults)
-		- [Aborts](#aborts)
-	- [Kernel Mode](#kernel-mode)
-	- [Virtual Memory](#virtual-memory)
-		- [Address Space](#address-space)
-			- [Virtual Address Space](#virtual-address-space)
-			- [Physical Address Space](#physical-address-space)
-		- [VM for Caching](#vm-for-caching)
-			- [DRAM Cache Organization](#dram-cache-organization)
-			- [Page Tables](#page-tables)
-				- [Page Table Entry (PTE)](#page-table-entry-pte)
-		- [VM for Protection](#vm-for-protection)
-			- [Page Faults](#page-faults)
-		- [Address Translation](#address-translation)
-			- [Translation Lookaside Buffer (TLB)](#translation-lookaside-buffer-tlb)
-			- [Translation Process](#translation-process)
-	- [Summary of Symbols](#summary-of-symbols)
-		- [Basic parameters](#basic-parameters)
-		- [Components of a virtual address (VA):](#components-of-a-virtual-address-va)
-		- [Components of a physical address (PA):](#components-of-a-physical-address-pa)
-		- [Others:](#others)
+ - [Processor/Control of Flow](#processorcontrol-of-flow)
+ - [Exceptions](#exceptions)
+  - [Types of Exceptions](#types-of-exceptions)
+  - [Interrupts](#interrupts)
+  - [Traps and System Calls](#traps-and-system-calls)
+  - [Faults](#faults)
+  - [Aborts](#aborts)
+ - [Kernel Mode](#kernel-mode)
+ - [Virtual Memory](#virtual-memory)
+  - [Address Space](#address-space)
+   - [Virtual Address Space](#virtual-address-space)
+   - [Physical Address Space](#physical-address-space)
+  - [VM for Caching](#vm-for-caching)
+   - [DRAM Cache Organization](#dram-cache-organization)
+   - [Page Tables](#page-tables)
+    - [Page Table Entry (PTE)](#page-table-entry-pte)
+  - [VM for Protection](#vm-for-protection)
+   - [Page Faults](#page-faults)
+  - [Address Translation](#address-translation)
+   - [Translation Lookaside Buffer (TLB)](#translation-lookaside-buffer-tlb)
+   - [Translation Process](#translation-process)
+ - [Summary of Symbols](#summary-of-symbols)
+  - [Basic parameters](#basic-parameters)
+  - [Components of a virtual address (VA):](#components-of-a-virtual-address-va)
+  - [Components of a physical address (PA):](#components-of-a-physical-address-pa)
+  - [Others:](#others)
 
 ## Processor/Control of Flow
 
@@ -90,6 +90,15 @@ Talking to the I/O devices:
 - I/O addresses are mapped to memory
 
    - Only kernel can access that memory
+
+What you can do *only* in kernel mode:
+
+- Change the values of the exception table (behaviour of exceptions);
+- Access and/or change virtual pages and the virtual page base register;
+- Halt the computer;
+- Access memory using the physical address directly;
+- Access memory associated to I/O devices;
+- Access virtual memory pages with supervisor flag on.
 
 ## Virtual Memory
 
