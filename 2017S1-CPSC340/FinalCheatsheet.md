@@ -392,6 +392,32 @@ Linear system: (X^TX - lambda I) = X^Ty
 
 f(w) = (1/2)||Xw-y||^2 + (lambda/2)||w||_1
 
+# Linear Classifiers
+
+Training: linear regression model
+
+Prediction: take the sign yi=sign(w^Txi)
+
+What we want is the 0-1 loss (# of classification errors)
+
+Convex approximations: Hinge loss, support vector machine — define y in {+1, -1}
+
+## Hinge Loss
+
+f(w)=sum(i=1 to n) max{0, 1-yiw^Txi}
+
+## Support Vector Machine (SVM)
+
+Hinge Loss with L2 regularization
+
+f(w)=sum(i=1 to n) max{0, 1-yiw^Txi} + (lambda/2)||w||^2
+
+# Logistic Regression
+
+*convex, differentiable, minimizes with gradient descent*
+
+Minimizes logistic loss: f(w) = sum(i=1 to n) log(1+ exp(-yiw^Txi))
+
 # Runtime Summary
 
 
