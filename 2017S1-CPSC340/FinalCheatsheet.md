@@ -408,7 +408,7 @@ f(w)=sum(i=1 to n) max{0, 1-yiw^Txi}
 
 ## Support Vector Machine (SVM)
 
-Hinge Loss with L2 regularization
+Hinge Loss with L2 regularization — Maximum-Margin Classifier (choose the farthest from both classes)
 
 f(w)=sum(i=1 to n) max{0, 1-yiw^Txi} + (lambda/2)||w||^2
 
