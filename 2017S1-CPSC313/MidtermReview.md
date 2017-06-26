@@ -63,8 +63,28 @@ Multiple in-flight (executing in the pipeline) instructions run partly at the sa
 #### Data Dependencies
 
 - Casual: B reads a value written by A
+
+  xxxxx r1, (r2)
+
+  ​              ↗
+
+  xxxxx r2, r3
+
 - Output: B writes to a location written by A
+
+  xxxxx r1, (r2)
+
+  ​                   ↑
+
+  xxxxx r3, (r2)
+
 - Anti/Alias: B writes to a location read by A
+
+  xxxxx r1, (r2)
+
+  ​              ↖
+
+  xxxxx r3, (r1)
 
 #### Control Dependencies
 
