@@ -347,7 +347,7 @@ Wrong basis: more data doesn't help
 
 Guassian  RBF:
 
-![guassian](./figures/Guassian.png)
+![guassian](./figures/guassian.png)
 
 Variance sigma^2 controls influence of nearby points
 
