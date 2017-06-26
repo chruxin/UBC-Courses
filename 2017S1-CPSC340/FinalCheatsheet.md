@@ -418,6 +418,30 @@ f(w)=sum(i=1 to n) max{0, 1-yiw^Txi} + (lambda/2)||w||^2
 
 Minimizes logistic loss: f(w) = sum(i=1 to n) log(1+ exp(-yiw^Txi))
 
+# Multi-Class Classification
+
+X (n by d), Y (n by k) W=[w1 | w2 … | wk] (d by k)
+
+To predict, pick *c* with the largest value of w_c^Txi, where c=index of largest yi
+
+## Softmax Loss Function
+
+*non-smooth, natural generalization of logistic regression*
+
+![softmax](./figures/softmax.png)
+
+log-sum-exp (w_yi are the weights for the true label)
+
+![](./figures/log-sum-exp-softmax.png)
+
+## Local vs Global Features
+
+Global: feature a when b=0, feature a when b=1
+
+Local features make prediction personalized:
+
+![](./figures/local+global.png)
+
 # Runtime Summary
 
 
