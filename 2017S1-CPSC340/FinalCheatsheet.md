@@ -274,6 +274,8 @@ Add a column of 1's to X (new matrix Z)
 
 # Norms of Vectors
 
+L0: # of non-zero values
+
 L1: ||r||_1 = sum (i=1 to d) |rj|
 
 L2: ||r ||_2 = ||r|| = sqrt(sum (i=1 to d) ri^2)
@@ -293,7 +295,7 @@ Objective function: the thing being maximized/ minimized
 
 Dimensionalities: input can be non-scalar-values, the function should be scalar-valued
 
-# Robust Regression
+# Robust Regression/Huber Loss
 Least absolute error f(w) = ||Xw - y||_1
 
 ## Gradient Descent
@@ -356,13 +358,50 @@ Gaussian RBFs are universal approximators
 - Can approximate any continuous function to arbitrary precision.
 - Achieve irreducible error as *n* goes to infinity.
 
+# Feature Selection
+
+Challenges:
+
+- Conditional independence and variable dependence
+- Tiny effects and context-specific relevance
+- Causality and confounding (hidden effects making irrelevant relevant) —> won't resolve
+
+# L0 Regularization
+
+*non-smooth, does feature selection, encourages exactly zeros in w*
+
+f(w) = (1/2)||Xw-y||^2 + lambda||w||_0
+
+Larger lambda, emphasize feature selection
+
+# L2 Regularization/Ridge Regression
+
+*convex, doesn't do feature selection, tend to be non-zeros in w, solution unique*
+
+f(w) = (1/2)||Xw-y||^2 + (lambda/2)||w||^2
+
+Traning error decreases, but reduces overfitting
+
+Gradient: ∇f(w) = X^TXw - X^Ty + lambda w
+
+Linear system: (X^TX - lambda I) = X^Ty
+
+# L1 Regularization
+
+*feature selection, requires iterative solver, solution not unique*
+
+f(w) = (1/2)||Xw-y||^2 + (lambda/2)||w||_1
+
 # Runtime Summary
 
 
-|                     | Decision Stump | Decision Tree                | KNN                                      | K-Means                     | DBSCAN                    |
-| ------------------- | -------------- | ---------------------------- | ---------------------------------------- | --------------------------- | ------------------------- |
-| Cost                | O(ndlongn)     | O(mndlogn), m: depth of tree | size of model: O(nd) cost of prediction: O(nd) for 1 test object | O(ndk), update means: O(nd) | dompute distances O(n^2d) |
-| sensitive to scales | No             |                              | Yes                                      | Yes                         | Yes                       |
-
-## 
-
+| Models                        | Cost                                     | sensitive to scales |
+| ----------------------------- | ---------------------------------------- | ------------------- |
+| **Decision Stump**            | O(ndlongn)                               | No                  |
+| **Decision Tree**             | O(mndlogn), m: depth of tree             | No                  |
+| **KNN**                       | size of model: O(nd) cost of prediction: O(nd) for 1 test object | Yes                 |
+| **K-Means**                   | O(ndk), update means: O(nd)              | Yes                 |
+| **DBSCAN**                    | dompute distances O(n^2d)                | Yes                 |
+| **RBFs**                      |                                          | Yes                 |
+| **Ordinary Least Squares**    |                                          | No                  |
+| **Regularized Least Squares** |                                          | Yes                 |
