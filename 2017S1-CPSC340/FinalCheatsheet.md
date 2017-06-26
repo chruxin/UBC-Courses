@@ -48,7 +48,7 @@ Parametric models:
 
 Non-parametric models:
 
-- Number of params grows with 'n'
+- Number of params grows with *n*
 - Model gets more complicated with more data
 
 ## KNN (K Nearest Neighbours)
@@ -220,7 +220,7 @@ Use supervised learning: yi = 0 if xi is a regular pint, yi=1 if xi is an outlie
 
 Needs supervision: what outliers look like, may not detect new types of outliers
 
-# Regression
+# Linear Regression
 
 *supervised*
 
@@ -307,14 +307,62 @@ As with L1-norm, L∞ norm is convex but non-smooth.
 
 Log-Sum-exp function is a smooth approximation to the max function
 
-max(z_i) = log( \sum{exp(z_i)} )​
+max(z_i) = log( \sum{exp(z_i)} )
 
 Intuition: largest element is magnified exponentially while smaller elements become negligible
+
+# Nonlinear Regression
+
+## Adapting Counting/Distance-Based Methods
+
+Adapt our classification methods to perform regression
+
+## Linear Least Squares for Quadratic Models
+
+Change of basis:
+
+yi = w0 + w1xi + w2xi^2 + … (w0 will be the y-intercept)
+
+Z = [1's | xi | xi^2]
+
+Linear functin of w, quadrtic function of xi.
+
+Prediction: y=Zw
+
+To select degree polynomial: validation and cross-validation
+
+### Parametric vs Non-parametric Bases
+
+yi = w0 + w1 f1(xi) + w2 f2(xi) + … 
+
+Wrong basis: more data doesn't help
+
+## Radical Basis Functions (RBFs)
+
+*Non-parametric* bases that can model any function
+
+![RBF](./figures/RBF-Zmatrix.png)
+
+
+
+Guassian  RBF:
+
+![guassian](./figures/Guassian.png)
+
+Variance sigma^2 controls influence of nearby points
+
+Gaussian RBFs are universal approximators
+
+- Can approximate any continuous function to arbitrary precision.
+- Achieve irreducible error as *n* goes to infinity.
 
 # Runtime Summary
 
 
 |                     | Decision Stump | Decision Tree                | KNN                                      | K-Means                     | DBSCAN                    |
 | ------------------- | -------------- | ---------------------------- | ---------------------------------------- | --------------------------- | ------------------------- |
-| Cost:               | O(ndlongn)     | O(mndlogn), m: depth of tree | size of model: O(nd) cost of prediction: O(nd) for 1 test object | O(ndk), update means: O(nd) | dompute distances O(n^2d) |
+| Cost                | O(ndlongn)     | O(mndlogn), m: depth of tree | size of model: O(nd) cost of prediction: O(nd) for 1 test object | O(ndk), update means: O(nd) | dompute distances O(n^2d) |
 | sensitive to scales | No             |                              | Yes                                      | Yes                         | Yes                       |
+
+## 
+
