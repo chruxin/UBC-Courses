@@ -442,6 +442,29 @@ Local features make prediction personalized:
 
 ![](./figures/local+global.png)
 
+# Kernel Methods
+
+w = Z^T(ZZ^T+lambda I)^(-1)y
+
+Gram matrix 'K'
+
+K = ZZ^T (n by n)
+
+'k' must be an inner product
+
+## Kernel Trick with Polynomials
+
+![Compute K](./figures/kernel-k.png)
+
+![Kernel predict](./figures/kernel-predict.png)
+
+## Gaussian-RBF Kernel
+*infinite-dimensional, prone to overfitting, non-parametric*
+
+infinitely many features in finite computational Ume
+
+![Gaussian-RBF Kernel](./figures/kernel-rbf.png)
+
 # Runtime Summary
 
 
@@ -455,3 +478,4 @@ Local features make prediction personalized:
 | **RBFs**                      |                                          | Yes                 |
 | **Ordinary Least Squares**    |                                          | No                  |
 | **Regularized Least Squares** |                                          | Yes                 |
+| **Kernel Trick with Polynomials** | Training: O(n^2d+n^3) Testing: O(ndt)|                     |
