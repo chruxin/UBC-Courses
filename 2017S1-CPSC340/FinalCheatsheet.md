@@ -471,17 +471,35 @@ Generative models use Bayes rule and models p($x_i | y_i$) to predict p($y_i | x
 
 Discriminative models directly model p($y_i | x_i$) to predict p($y_i | x_i$)
 
+# Maximum Likelihood
+
+P(w|X, y) = P(y|X, w) P(w)   P(y|X, w) is likelihood, P(w) is prior
+
+Choice of likelihood —> choice of loss function, choice of prior —> regularization
+
+## Maximum Likelihood Estimation
+
+Minimize ![](./figures/MLE.png)
+
+Guassian Likelihood: minimize f(w) = (1/2)||Xw-y||^2
+
+## Maximizing a Posteriori
+
+Guassian Prior: ![](./figures/guassian-prior.png)
+
+Negative log-prior: (lambda/2)||w||^2
+
 # Runtime Summary
 
 
-| Models                        | Cost                                     | sensitive to scales |
-| ----------------------------- | ---------------------------------------- | ------------------- |
-| **Decision Stump**            | O(ndlongn)                               | No                  |
-| **Decision Tree**             | O(mndlogn), m: depth of tree             | No                  |
-| **KNN**                       | size of model: O(nd) cost of prediction: O(nd) for 1 test object | Yes                 |
-| **K-Means**                   | O(ndk), update means: O(nd)              | Yes                 |
-| **DBSCAN**                    | dompute distances O(n^2d)                | Yes                 |
-| **RBFs**                      |                                          | Yes                 |
-| **Ordinary Least Squares**    |                                          | No                  |
-| **Regularized Least Squares** |                                          | Yes                 |
-| **Kernel Trick with Polynomials** | Training: O(n^2d+n^3) Testing: O(ndt)|                     |
+| Models                            | Cost                                     | sensitive to scales |
+| --------------------------------- | ---------------------------------------- | ------------------- |
+| **Decision Stump**                | O(ndlongn)                               | No                  |
+| **Decision Tree**                 | O(mndlogn), m: depth of tree             | No                  |
+| **KNN**                           | size of model: O(nd) cost of prediction: O(nd) for 1 test object | Yes                 |
+| **K-Means**                       | O(ndk), update means: O(nd)              | Yes                 |
+| **DBSCAN**                        | dompute distances O(n^2d)                | Yes                 |
+| **RBFs**                          |                                          | Yes                 |
+| **Ordinary Least Squares**        |                                          | No                  |
+| **Regularized Least Squares**     |                                          | Yes                 |
+| **Kernel Trick with Polynomials** | Training: O(n^2d+n^3) Testing: O(ndt)    |                     |
