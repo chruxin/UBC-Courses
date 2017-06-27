@@ -124,6 +124,7 @@ Input: set of objects described by features xi
 Output: an assignment of objects to 'groups'
 
 ## K-means
+*vector quantization*
 
 Input: K, initial guesses of means/centers
 
@@ -500,7 +501,7 @@ assume features are independent given label
 ![](./figures/naive-bayes.png)
 
 # Principal Component Analysis (PCA)
-*parametric linear model*
+*parametric linear model, insensitive to initialization*
 
 W is k by d; each row is a mean; each column is a feature
 
@@ -551,6 +552,23 @@ PCA uses SVD which gives orthogonal PCs ordered by importance.
 
 Orthogonal basis and sequential fitting of PCs leads to non-redundant PCs with unique directions.
 
+## Non-negative matrix factorization (NMF)
+*non-convex, sensitive to initialization*
+
+Builds on PCA, adds requirement of non-negativity
+
+Makes object out of parts
+
+Non-negativity tends to generate sparse solutions
+
+projected gradient algorithm
+
+```
+run gradient descent iteration
+after each step, set negative values to 0
+repeat
+```
+
 ## Robust PCA
 
 Absolute error, robust to outliers (increases slower)
@@ -574,6 +592,14 @@ latent-factor model for visualizing data on manifolds
 ## t-SNE
 
 special case of MDS, focus on small distances by allowing large variance in large distances
+
+# Sparsity
+
+Related to feature selection and L1-regularization (w is sparse)
+
+NMF leads to sparse Z and W
+
+
 
 # Runtime Summary
 
