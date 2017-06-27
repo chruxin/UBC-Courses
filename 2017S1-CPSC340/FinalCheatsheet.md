@@ -135,7 +135,7 @@ Algorithm: assign xi to closest, update means, repeat until no object change gro
 - Bootstrapping, random initial means and choose best/combine
 - label switching: is xi in the came cluster as xj?
 
-## DBSCAM (Density-Based Clustering)
+## DBSCAN (Density-Based Clustering)
 
 *Non-parametric*:
 
