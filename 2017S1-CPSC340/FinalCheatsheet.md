@@ -499,7 +499,39 @@ assume features are independent given label
 
 ![](./figures/naive-bayes.png)
 
-​	
+# Principal Component Analysis (PCA)
+W is k by d; each row is a mean; each column is a feature
+
+![PCA Objective](./figures/pca-objective.png)
+
+![PCA Objective Matrix](./figures/pca-matrix.png)
+
+Latent-factor model:
+
+- w_c (row of w) called “factors” or “principal components”
+- z_i (z_i^T is row of Z) are called “factor loadings” or “low-dimensional basis”
+- linear combination of all means/factors
+- soft assignments to the cluster means
+
+matrix factorization model:
+
+![PCA factorization model](./figures/pca-factorization.png)
+
+learning the latent factors ‘W’ and latent features zi
+
+Dimensionality reduction: replace ‘X’ with lower-dimensional ‘Z’
+
+try to reconstruct the original points (X) using only the ‘k’ basis vectors
+
+Much better approximation than vector quantization.
+
+## PCA Applications
+
+- Dimensionality reduction
+- Outlier detection
+- Partial least squares
+- Data visualization
+- Data interpretation
 
 # Runtime Summary
 
