@@ -611,6 +611,17 @@ uses gradient of randomly-chosen training example (cost of computing this gradie
 
 control step size (decrease to get convergence)
 
+# Neural Networks
+*non-linea, supervisedr*
+
+w is k by 1
+
+W is k by d
+
+## Sigmoid
+
+smooth approximation to binary features
+
 # Runtime Summary
 
 
