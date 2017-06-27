@@ -262,7 +262,7 @@ yhat = X@w
 ### Least Square Issues
 
 - solution may not be unique
-- sensitive tto outliers
+- sensitive to outliers
 - always uses all features
 - data can be big that X^TX can't be stored
 - may predict outside of range yi values
@@ -488,6 +488,18 @@ Guassian Likelihood: minimize f(w) = (1/2)||Xw-y||^2
 Guassian Prior: ![](./figures/guassian-prior.png)
 
 Negative log-prior: (lambda/2)||w||^2
+
+# Probabilistic Classifiers
+
+model the conditional probability, p(yi | xi)
+
+## Naive Bayes
+
+assume features are independent given label
+
+![](./figures/naive-bayes.png)
+
+​	
 
 # Runtime Summary
 
