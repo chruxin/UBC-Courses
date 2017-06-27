@@ -607,7 +607,7 @@ used when n is very large
 uses gradient of randomly-chosen training example (cost of computing this gradient is independent of n)
 
 
-**problems:** gradient of random example might point in the wrong direction
+**problems:** gradient of random example might point in the wrong direction, sensitive to step size and batch size (number of random examples)
 
 control step size (decrease to get convergence)
 
@@ -634,8 +634,22 @@ backward pass has same cost
 
 smooth approximation to binary features
 
-# Runtime Summary
+## ReLU
 
+hinge-like loss
+
+## Deep Learning
+
+as depth increases, training error decreases = overfitting --> regularization
+
+
+### Regularization
+
+**early stopping:** stop when validation starts increasing
+
+**dropout:** on each iteration randomly set some xi and zi to 0
+
+# Runtime Summary
 
 | Models                            | Cost                                     | sensitive to scales |
 | --------------------------------- | ---------------------------------------- | ------------------- |
