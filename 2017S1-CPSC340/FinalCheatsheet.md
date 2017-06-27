@@ -612,11 +612,23 @@ uses gradient of randomly-chosen training example (cost of computing this gradie
 control step size (decrease to get convergence)
 
 # Neural Networks
-*non-linea, supervisedr*
+*non-linear, supervised, non-convex*
 
 w is k by 1
 
 W is k by d
+
+objective function
+
+![neural network objective function](./figures/neural-network-objective.png)
+
+## Backpropagation
+
+computes gradient using chain rule
+
+m layers, all have zi have k elements, cost is O(dk + mk^2)
+
+backward pass has same cost
 
 ## Sigmoid
 
