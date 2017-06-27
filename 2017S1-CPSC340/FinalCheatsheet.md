@@ -537,6 +537,10 @@ Much better approximation than vector quantization.
 - Data visualization (use PCA to get the location of the zi values, plot zi)
 - Data interpretation
 
+## PCA Issues
+
+k = 1, scaling problem. k > 1, have scaling, orthogonality, rotation, label switching.
+
 ## Choosing number of latent factors (k)
 
 Variance explained: span of points on line ![](./figures/variance-explained.png)
