@@ -500,7 +500,11 @@ assume features are independent given label
 ![](./figures/naive-bayes.png)
 
 # Principal Component Analysis (PCA)
+*parametric linear model*
+
 W is k by d; each row is a mean; each column is a feature
+
+Objective funtion (*non-convex, solution non-unique*):
 
 ![PCA Objective](./figures/pca-objective.png)
 
@@ -530,8 +534,42 @@ Much better approximation than vector quantization.
 - Dimensionality reduction
 - Outlier detection
 - Partial least squares
-- Data visualization
+- Data visualization (use PCA to get the location of the zi values, plot zi)
 - Data interpretation
+
+## Choosing number of latent factors (k)
+
+Variance explained: span of points on line ![](./figures/variance-explained.png)
+
+## SVD
+
+PCA uses SVD which gives orthogonal PCs ordered by importance.
+
+Orthogonal basis and sequential fitting of PCs leads to non-redundant PCs with unique directions.
+
+## Robust PCA
+
+Absolute error, robust to outliers (increases slower)
+
+# Manifold Learning
+
+focuses on low-dimensional curved structures
+
+## Multi-Dimensional Scaling (MDS)
+
+*non-parametric dimensionality reduction and visualization, non-convex, sensitive to initialization, cannot use SVD*
+
+Directly optimize the final locations of the zi values while preserve high-dimensional “distances” between xi: ![](./figures/mds.png)
+
+MDS with different distances/losses/weights usually gives better results.
+
+## ISOMAP
+
+latent-factor model for visualizing data on manifolds
+
+## t-SNE
+
+special case of MDS, focus on small distances by allowing large variance in large distances
 
 # Runtime Summary
 
