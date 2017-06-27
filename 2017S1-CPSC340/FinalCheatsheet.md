@@ -647,7 +647,33 @@ as depth increases, training error decreases = overfitting --> regularization
 
 **early stopping:** stop when validation starts increasing
 
-**dropout:** on each iteration randomly set some xi and zi to 0
+**dropout:** on each iteration randomly set some xi and zi to 03
+
+# Recommender Systems
+
+## Content-based filtering
+
+*supervised*
+
+Extract features, build models
+
+## Collaborative Filtering
+
+*unsupervised*
+
+Have labels but no features
+
+Example: movie (columns), users (rows)
+
+Can’t predict ratings for new users/movies
+
+Matrix factorization (latent-factor) is a common approach
+
+## Association Rules vs. Clustering
+
+Clustering: objects related, association rules: features occur together
+
+Support: p(S=1), confidence: p(T=1 | S=1)
 
 # Runtime Summary
 
