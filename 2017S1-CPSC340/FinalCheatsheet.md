@@ -599,7 +599,17 @@ Related to feature selection and L1-regularization (w is sparse)
 
 NMF leads to sparse Z and W
 
+# Stochastic Gradient
+*iterative optimization algorithm*
 
+used when n is very large
+
+uses gradient of randomly-chosen training example (cost of computing this gradient is independent of n)
+
+
+**problems:** gradient of random example might point in the wrong direction
+
+control step size (decrease to get convergence)
 
 # Runtime Summary
 
