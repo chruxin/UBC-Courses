@@ -416,7 +416,7 @@ f(w)=sum(i=1 to n) max{0, 1-yiw^Txi} + (lambda/2)||w||^2
 
 *convex, differentiable, minimizes with gradient descent*
 
-Minimizes logistic loss: f(w) = sum(i=1 to n) log(1+ exp(-yiw^Txi))
+Minimizes logistic loss: ![probability logistic](./figures/probability-logistic.png) f(w) = sum(i=1 to n) log(1+ exp(-yiw^Txi))
 
 # Multi-Class Classification
 
@@ -464,6 +464,12 @@ K = ZZ^T (n by n)
 infinitely many features in finite computational Ume
 
 ![Gaussian-RBF Kernel](./figures/kernel-rbf.png)
+
+# Generative vs. Discriminative Models
+
+Generative models use Bayes rule and models p($x_i | y_i$) to predict p($y_i | x_i$)
+
+Discriminative models directly model p($y_i | x_i$) to predict p($y_i | x_i$)
 
 # Runtime Summary
 
